@@ -1,0 +1,510 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Artajerjes Solutions | Equipo tecnológico para empresas";
+    ViewData["MetaDescription"] = "Equipo tecnológico para pymes en Argentina y el mundo. Desarrollo de software a medida, diseño de páginas web, tienda online, sistema de gestión, trackeo de envíos y repartos, marketing digital y automatización de procesos con IA.";
+    ViewData["Canonical"] = "https://artajerjes.com/";
+    var waDiagnostico = IndexModel.GetWhatsAppUrl();
+    var waPresupuesto = IndexModel.GetWhatsAppUrl("Hola, quiero pedir un presupuesto para un plan de partnership.");
+}
+
+@section Head {
+    @if (!string.IsNullOrWhiteSpace(Model.WhatsAppRedirectUrl))
+    {
+        <meta name="wa-redirect" content="@Model.WhatsAppRedirectUrl" />
+    }
+
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "Organization",
+      "name": "Artajerjes Solutions",
+      "url": "https://artajerjes.com/",
+      "logo": "https://artajerjes.com/images/logo-artajerjes.png",
+      "description": "Equipo tecnológico para pymes y empresas. Software, web, automatización, marketing digital y trackeo.",
+      "areaServed": [
+        { "@@type": "Country", "name": "Argentina" },
+        { "@@type": "Place", "name": "Worldwide" }
+      ],
+      "contactPoint": [{
+        "@@type": "ContactPoint",
+        "contactType": "sales",
+        "availableLanguage": ["es", "en"],
+        "telephone": "+5491163615125",
+        "email": "Contacto@Artajerjes.com"
+      }]
+    }
+    </script>
+}
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+        <img src="~/images/hero-comercio.jpg" alt="" width="1600" height="900" fetchpriority="high" />
+        <div class="hero-overlay"></div>
+        <div class="circuit-bg"></div>
+    </div>
+    <div class="container hero-content">
+        <p class="section-eyebrow">Artajerjes Solutions</p>
+        <h1 id="hero-title">Tu equipo tecnológico, estés donde estés</h1>
+        <p class="hero-lead">Software, web, automatización y soporte para que tu empresa trabaje mejor. Un solo equipo que te acompaña de punta a punta.</p>
+        <div class="btn-group">
+            <a class="btn btn-primary" href="@waDiagnostico" target="_blank" rel="noopener noreferrer">Pedí tu diagnóstico digital gratis</a>
+            <a class="btn btn-secondary" href="#servicios">Ver qué hacemos</a>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- ¿Te pasa esto? -->
+<section class="section section-dark" id="dolores" aria-labelledby="dolores-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Diagnóstico</p>
+        <h2 class="section-title reveal" id="dolores-title">¿Te pasa esto?</h2>
+        <p class="section-lead reveal">Si reconocés alguno de estos problemas, un equipo tecnológico para pymes puede ayudarte a ganar tiempo, control y ventas.</p>
+        <div class="grid-pain">
+            <article class="pain-card reveal">
+                <h3>Web vieja o inexistente</h3>
+                <p>Tu página está caída, desactualizada o directamente no existe, y tus clientes no te encuentran.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Pedidos por WhatsApp sin control</h3>
+                <p>Vendés por chat, pero los pedidos se pierden entre mensajes, no hay seguimiento claro y nadie sabe en qué quedó cada uno.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Redes abandonadas</h3>
+                <p>Publicás de vez en cuando o hace meses que no hay novedades en tus redes.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Excel, papel o sistemas sueltos</h3>
+                <p>Gestionás en planillas, papeles o herramientas que no se hablan entre sí.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Poco control operativo</h3>
+                <p>Stock, ventas y sucursales sin una mirada clara y al día.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Tareas manuales repetitivas</h3>
+                <p>Tu equipo pierde horas en procesos que se podrían automatizar.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Sin a quién recurrir</h3>
+                <p>Cuando algo falla en sistemas, no tenés un contacto confiable y rápido.</p>
+            </article>
+            <article class="pain-card reveal">
+                <h3>Proveedores que desaparecen</h3>
+                <p>Te dejaron el sistema hecho… y después no contestan más.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Qué hacemos -->
+<section class="section section-deep" id="servicios" aria-labelledby="servicios-title">
+    <div class="circuit-bg" aria-hidden="true"></div>
+    <div class="container">
+        <p class="section-eyebrow reveal">Servicios</p>
+        <h2 class="section-title reveal" id="servicios-title">Qué hacemos</h2>
+        <p class="section-lead reveal">Diseño de páginas web para empresas, tienda online, sistema de gestión para pymes, marketing digital y trackeo: todo con el mismo equipo.</p>
+        <div class="services-grid">
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+                <div>
+                    <h3>Web y landing</h3>
+                    <p>Tu presencia online profesional, rápida y lista para vender.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 1.9-1.4L21 8H7"/></svg>
+                <div>
+                    <h3>Tienda online</h3>
+                    <p>Vendé por internet con catálogo, pagos y envíos integrados. Tienda online para empresas que quieren vender más.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 11h8M8 15h5"/></svg>
+                <div>
+                    <h3>Web como suscripción</h3>
+                    <p>Tu web con hosting y mantenimiento incluidos, por una cuota mensual.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg>
+                <div>
+                    <h3>Sistemas de gestión a medida</h3>
+                    <p>Stock, ventas, sucursales, logística y reportes, adaptados a tu negocio. Desarrollo de software a medida, con foco en Argentina y operación remota para el resto del mundo.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M7 12h6"/><circle cx="17" cy="16" r="3"/><path d="M4 4h16v9H4z"/></svg>
+                <div>
+                    <h3>Integraciones y automatización</h3>
+                    <p>Conectamos tus herramientas (WhatsApp, pagos, facturación) y automatizamos tareas con IA.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.5L19 8.2l-3.5 3.4.8 4.9L12 14.8 7.7 16.5l.8-4.9L5 8.2l4.8-.7z"/></svg>
+                <div>
+                    <h3>Marketing digital</h3>
+                    <p>Instagram, Facebook, TikTok y LinkedIn, con campañas y contenidos pensados para que te encuentren y te elijan.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg>
+                <div>
+                    <h3>Trackeo</h3>
+                    <p>Seguimiento de envíos, repartos y personal en la calle, para saber dónde está cada uno y controlar la operación en tiempo real.</p>
+                </div>
+            </article>
+            <article class="service-card reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a5 5 0 0 1 5 5v1h1a3 3 0 0 1 0 6h-1v1a5 5 0 0 1-10 0v-1H6a3 3 0 0 1 0-6h1V8a5 5 0 0 1 5-5z"/></svg>
+                <div>
+                    <h3>Consultoría y capacitación</h3>
+                    <p>Te ayudamos a elegir y usar la tecnología correcta, sin vueltas.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Equipo de asistencia -->
+<section class="section section-dark" id="asistencia" aria-labelledby="asistencia-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Diferencia</p>
+        <h2 class="section-title reveal" id="asistencia-title">Por qué un equipo de asistencia y no un proveedor</h2>
+        <p class="section-lead reveal">No venimos a entregar un trabajo y desaparecer. Somos un equipo de asistencia que se queda cerca de tu empresa para que la tecnología acompañe el día a día y el crecimiento.</p>
+        <div class="why-grid">
+            <article class="why-item reveal">
+                <h3>Un solo equipo</h3>
+                <p>Web, sistemas, marketing digital y trackeo con la misma gente que ya conoce tu negocio.</p>
+            </article>
+            <article class="why-item reveal">
+                <h3>Remoto y presencial</h3>
+                <p>Trabajamos de forma remota con cualquier país y, en Argentina, también presencial cuando hace falta.</p>
+            </article>
+            <article class="why-item reveal">
+                <h3>Abono con respaldo</h3>
+                <p>Abono mensual con horas incluidas y tiempos de respuesta garantizados.</p>
+            </article>
+            <article class="why-item reveal">
+                <h3>Escalá sin cambiar</h3>
+                <p>Empezás con una web y escalás a un sistema de gestión sin tener que buscar otro equipo.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Cómo trabajamos -->
+<section class="section section-deep" id="como-trabajamos" aria-labelledby="como-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Proceso</p>
+        <h2 class="section-title reveal" id="como-title">Cómo trabajamos</h2>
+        <p class="section-lead reveal">Cuatro pasos claros, con comunicación constante. Todo se puede hacer por videollamada.</p>
+        <div class="timeline">
+            <article class="timeline-step reveal">
+                <div class="timeline-dot" aria-hidden="true">1</div>
+                <div>
+                    <h3>Diagnóstico</h3>
+                    <p>Revisamos tu situación digital y operativa para detectar oportunidades concretas.</p>
+                </div>
+            </article>
+            <article class="timeline-step reveal">
+                <div class="timeline-dot" aria-hidden="true">2</div>
+                <div>
+                    <h3>Plan</h3>
+                    <p>Armamos un plan priorizado: qué conviene hacer primero y qué impacto vas a ver.</p>
+                </div>
+            </article>
+            <article class="timeline-step reveal">
+                <div class="timeline-dot" aria-hidden="true">3</div>
+                <div>
+                    <h3>Implementación</h3>
+                    <p>Diseñamos, desarrollamos e integramos sin frenar el día a día de tu empresa.</p>
+                </div>
+            </article>
+            <article class="timeline-step reveal">
+                <div class="timeline-dot" aria-hidden="true">4</div>
+                <div>
+                    <h3>Acompañamiento</h3>
+                    <p>Soporte continuo, mejoras y capacitación para que la tecnología rinda.</p>
+                </div>
+            </article>
+        </div>
+        <p class="timeline-note reveal">¿Estás en otra ciudad o país? Perfecto: avanzamos 100% remoto por videollamada.</p>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Planes -->
+<section class="section section-light" id="planes" aria-labelledby="planes-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Partnership</p>
+        <h2 class="section-title reveal" id="planes-title">Planes de partnership</h2>
+        <p class="section-lead reveal">Elegí el nivel de acompañamiento que necesita tu empresa. Sin montos acá: pedí tu presupuesto y lo armamos a medida.</p>
+        <div class="plans-grid">
+            <article class="plan-card reveal">
+                <p class="for-who">Para empezar con orden</p>
+                <h3>Arranque</h3>
+                <ul>
+                    <li>Ideal si necesitás presencia online y primeras mejoras digitales.</li>
+                    <li>Web o landing, bases de marketing y soporte inicial.</li>
+                    <li>Horas mensuales para consultas y ajustes.</li>
+                </ul>
+                <a class="btn btn-primary" href="@waPresupuesto" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
+            </article>
+            <article class="plan-card featured reveal">
+                <p class="for-who">Para crecer con control</p>
+                <h3>Crecimiento</h3>
+                <ul>
+                    <li>Para empresas que ya venden y quieren más eficiencia.</li>
+                    <li>Sistemas, integraciones, automatización de procesos con IA y campañas.</li>
+                    <li>Más horas y prioridad de respuesta.</li>
+                </ul>
+                <a class="btn btn-primary" href="@waPresupuesto" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
+            </article>
+            <article class="plan-card reveal">
+                <p class="for-who">Para operar como equipo propio</p>
+                <h3>Partner</h3>
+                <ul>
+                    <li>Tu área tecnológica externalizada con un interlocutor único.</li>
+                    <li>Web, sistemas, marketing y trackeo en un mismo plan.</li>
+                    <li>Acompañamiento estratégico continuo.</li>
+                </ul>
+                <a class="btn btn-primary" href="@waPresupuesto" target="_blank" rel="noopener noreferrer">Pedí tu presupuesto</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Aliados tecnológicos -->
+<section class="section section-dark" id="aliados-tecnologicos" aria-labelledby="aliados-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Alianzas</p>
+        <h2 class="section-title reveal" id="aliados-title">Nuestros aliados tecnológicos</h2>
+        <p class="section-lead reveal">Trabajamos con plataformas y aliados que potencian lo que construimos para tu empresa.</p>
+        <div class="partners-grid">
+            <article class="partner-card reveal" data-partner="[ALIADO 1]">
+                <div class="partner-logo" aria-hidden="true">[LOGO]</div>
+                <h3>[NOMBRE]</h3>
+                <p>[DESCRIPCIÓN]</p>
+            </article>
+            <article class="partner-card reveal" data-partner="[ALIADO 2]">
+                <div class="partner-logo" aria-hidden="true">[LOGO]</div>
+                <h3>[NOMBRE]</h3>
+                <p>[DESCRIPCIÓN]</p>
+            </article>
+            <article class="partner-card reveal" data-partner="[ALIADO 3]">
+                <div class="partner-logo" aria-hidden="true">[LOGO]</div>
+                <h3>[NOMBRE]</h3>
+                <p>[DESCRIPCIÓN]</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Rubros -->
+<section class="section section-light" id="rubros" aria-labelledby="rubros-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Industrias</p>
+        <h2 class="section-title reveal" id="rubros-title">Rubros que acompañamos</h2>
+        <p class="section-lead reveal">Acompañamos comercios, distribuidoras, industrias y empresas de servicios con facturación real y ganas de ordenarse digitalmente.</p>
+        <div class="rubros-grid">
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10l8-6 8 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M9 20v-6h6v6"/></svg>
+                <span>Comercios y sucursales</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h13l5 5v7H3z"/><path d="M16 7v5h5"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="17.5" cy="19" r="1.5"/></svg>
+                <span>Distribuidoras y mayoristas</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg>
+                <span>Supermercados</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg>
+                <span>Industrias</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M6 12V7h12v5M5 12l1 8h12l1-8"/></svg>
+                <span>Corralones</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 20V9a4 4 0 0 1 8 0v11"/><path d="M6 20h12"/><circle cx="12" cy="6" r="2"/></svg>
+                <span>Clínicas y salud</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="13" height="9" rx="1"/><path d="M16 11h3l2 3v3h-5"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+                <span>Transporte y logística</span>
+            </div>
+            <div class="rubro-item reveal">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 4 7 7.5 7 11a7 7 0 1 1-14 0c0-3.5 3-7 7-11z"/><circle cx="12" cy="14" r="2.5"/></svg>
+                <span>Agro y servicios</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- Confianza -->
+<section class="section section-deep" id="confianza" aria-labelledby="confianza-title">
+    <div class="container">
+        <p class="section-eyebrow reveal">Confianza</p>
+        <h2 class="section-title reveal" id="confianza-title">Quiénes somos</h2>
+        <p class="section-lead reveal">Un equipo cercano, con proceso transparente, contrato claro y soporte con tiempos de respuesta.</p>
+
+        <div class="team-grid">
+            <article class="team-card reveal">
+                <div class="team-photo" role="img" aria-label="Foto de [NOMBRE]">[FOTO]</div>
+                <h3>[NOMBRE]</h3>
+                <p>Equipo Artajerjes</p>
+            </article>
+            <article class="team-card reveal">
+                <div class="team-photo" role="img" aria-label="Foto de [NOMBRE]">[FOTO]</div>
+                <h3>[NOMBRE]</h3>
+                <p>Equipo Artajerjes</p>
+            </article>
+            <article class="team-card reveal">
+                <div class="team-photo" role="img" aria-label="Foto de [NOMBRE]">[FOTO]</div>
+                <h3>[NOMBRE]</h3>
+                <p>Equipo Artajerjes</p>
+            </article>
+        </div>
+
+        <p class="trust-highlight reveal">Desarrollamos y operamos software propio en producción</p>
+
+        <ul class="trust-points reveal">
+            <li>Proceso transparente: sabés qué se hace, cuándo y por qué.</li>
+            <li>Contrato claro, sin letra chica que te deje a medias.</li>
+            <li>Soporte con tiempos de respuesta acordados desde el día uno.</li>
+        </ul>
+
+        @*
+        ============================================================
+        BLOQUE DE TESTIMONIOS — oculto hasta tener casos reales.
+        Activar quitando este comentario de Razor cuando haya reseñas.
+        No inventar testimonios, reseñas ni logos de clientes.
+        ============================================================
+        <section class="section" id="testimonios" aria-labelledby="testimonios-title">
+            <h2 id="testimonios-title">Lo que dicen nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <blockquote>
+                    <p>[TESTIMONIO]</p>
+                    <footer>[NOMBRE], [CARGO] — [EMPRESA]</footer>
+                </blockquote>
+            </div>
+        </section>
+        *@
+    </div>
+</section>
+
+<img class="circuit-divider" src="~/images/circuit-divider.svg" alt="" width="1200" height="40" />
+
+<!-- CTA final + contacto -->
+<section class="section section-black" id="contacto" aria-labelledby="contacto-title">
+    <div class="circuit-bg" aria-hidden="true"></div>
+    <div class="container">
+        <p class="section-eyebrow reveal">Contacto</p>
+        <h2 class="section-title reveal" id="contacto-title">Pedí tu diagnóstico digital gratis</h2>
+        <p class="section-lead reveal">Contanos tu empresa y te proponemos el siguiente paso. También podés escribirnos directo por WhatsApp.</p>
+
+        <div class="contact-layout">
+            <form method="post" asp-page-handler="Contacto" class="contact-form reveal" novalidate>
+                @if (!string.IsNullOrWhiteSpace(Model.WhatsAppRedirectUrl))
+                {
+                    <p class="form-success" role="status">Gracias. Te estamos abriendo WhatsApp para continuar la conversación.</p>
+                }
+
+                <div class="form-row">
+                    <div class="field">
+                        <label asp-for="Contacto.Nombre"></label>
+                        <input asp-for="Contacto.Nombre" autocomplete="name" />
+                        <span class="error" asp-validation-for="Contacto.Nombre"></span>
+                    </div>
+                    <div class="field">
+                        <label asp-for="Contacto.Empresa"></label>
+                        <input asp-for="Contacto.Empresa" autocomplete="organization" />
+                        <span class="error" asp-validation-for="Contacto.Empresa"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label asp-for="Contacto.Rubro"></label>
+                        <input asp-for="Contacto.Rubro" list="rubros-sugeridos" />
+                        <datalist id="rubros-sugeridos">
+                            <option value="Comercio"></option>
+                            <option value="Distribuidora / Mayorista"></option>
+                            <option value="Supermercado"></option>
+                            <option value="Industria"></option>
+                            <option value="Corralón"></option>
+                            <option value="Clínica / Salud"></option>
+                            <option value="Transporte / Logística"></option>
+                            <option value="Agro"></option>
+                            <option value="Servicios"></option>
+                            <option value="Otro"></option>
+                        </datalist>
+                        <span class="error" asp-validation-for="Contacto.Rubro"></span>
+                    </div>
+                    <div class="field">
+                        <label asp-for="Contacto.Pais"></label>
+                        <input asp-for="Contacto.Pais" autocomplete="country-name" />
+                        <span class="error" asp-validation-for="Contacto.Pais"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label asp-for="Contacto.Ciudad"></label>
+                        <input asp-for="Contacto.Ciudad" autocomplete="address-level2" />
+                        <span class="error" asp-validation-for="Contacto.Ciudad"></span>
+                    </div>
+                    <div class="field">
+                        <label asp-for="Contacto.Telefono">Teléfono (con código de país)</label>
+                        <input asp-for="Contacto.Telefono" type="tel" autocomplete="tel" placeholder="+54 9 11 ..." />
+                        <span class="error" asp-validation-for="Contacto.Telefono"></span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label asp-for="Contacto.Necesidad"></label>
+                    <textarea asp-for="Contacto.Necesidad" rows="4" placeholder="Web, sistema de gestión, trackeo, marketing..."></textarea>
+                    <span class="error" asp-validation-for="Contacto.Necesidad"></span>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Enviar y continuar por WhatsApp</button>
+            </form>
+
+            <aside class="contact-aside reveal">
+                <div class="info-card">
+                    <h3>WhatsApp</h3>
+                    <p><a href="@waDiagnostico" target="_blank" rel="noopener noreferrer">@IndexModel.TelefonoDisplay</a></p>
+                    <a class="btn btn-secondary" href="@waDiagnostico" target="_blank" rel="noopener noreferrer">Escribinos ahora</a>
+                </div>
+                <div class="info-card">
+                    <h3>Datos de contacto</h3>
+                    <p>Teléfono: <a href="tel:@IndexModel.TelefonoHref">@IndexModel.TelefonoDisplay</a></p>
+                    <p>Email: <a href="mailto:@IndexModel.Email">@IndexModel.Email</a></p>
+                    <p>Dirección: [DIRECCIÓN]</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

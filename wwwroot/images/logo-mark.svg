@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" role="img" aria-label="Artajerjes">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#B8862F"/>
+      <stop offset="55%" stop-color="#E6C36A"/>
+      <stop offset="100%" stop-color="#F0D78A"/>
+    </linearGradient>
+  </defs>
+  <!-- Corona -->
+  <path fill="url(#gold)" d="M28 34 L40 18 L52 30 L60 14 L68 30 L80 18 L92 34 L84 42 L36 42 Z"/>
+  <!-- A -->
+  <path fill="url(#gold)" d="M60 46 L28 118 H42 L48 102 H72 L78 118 H92 Z M52 90 L60 66 L68 90 Z"/>
+  <!-- Circuit lines -->
+  <g fill="none" stroke="url(#gold)" stroke-width="3.5" stroke-linecap="round">
+    <path d="M78 70 H108"/>
+    <path d="M82 84 H104"/>
+    <path d="M78 98 H100"/>
+  </g>
+  <circle cx="108" cy="70" r="4" fill="url(#gold)"/>
+  <circle cx="104" cy="84" r="4" fill="url(#gold)"/>
+  <circle cx="100" cy="98" r="4" fill="url(#gold)"/>
+</svg>

@@ -1,0 +1,119 @@
+﻿@using LandingArtajerjes.Pages
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@(ViewData["MetaDescription"] ?? "Equipo tecnológico para pymes en Argentina y el mundo. Software, web, automatización, marketing y trackeo.")" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="@(ViewData["Canonical"] ?? "https://artajerjes.com/")" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Artajerjes Solutions" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@(ViewData["MetaDescription"] ?? "Equipo tecnológico para pymes en Argentina y el mundo.")" />
+    <meta property="og:image" content="@Url.Content("~/images/logo-artajerjes.png")" />
+    <meta property="og:url" content="@(ViewData["Canonical"] ?? "https://artajerjes.com/")" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@ViewData["Title"]" />
+    <meta name="twitter:description" content="@(ViewData["MetaDescription"] ?? "Equipo tecnológico para pymes en Argentina y el mundo.")" />
+    <meta name="twitter:image" content="@Url.Content("~/images/logo-artajerjes.png")" />
+
+    <link rel="icon" href="~/images/logo-mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="~/images/logo-mark.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header" id="inicio">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="Artajerjes Solutions — inicio">
+                <img class="brand-full" src="~/images/logo-artajerjes.png" width="180" height="180" alt="Artajerjes Solutions — equipo tecnológico" />
+                <img class="brand-mark" src="~/images/logo-mark.svg" width="48" height="52" alt="Artajerjes" />
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-principal" id="nav-principal" aria-label="Principal">
+                <a href="#servicios">Qué hacemos</a>
+                <a href="#asistencia">Equipo de asistencia</a>
+                <a href="#como-trabajamos">Cómo trabajamos</a>
+                <a href="#planes">Planes</a>
+                <a href="#contacto">Contacto</a>
+                <a class="btn btn-primary btn-sm" href="@IndexModel.GetWhatsAppUrl()" target="_blank" rel="noopener noreferrer">Pedí tu diagnóstico</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer" id="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="~/images/logo-artajerjes.png" width="160" height="160" alt="Artajerjes Solutions" />
+                <p>Equipo tecnológico para pymes y empresas en Argentina y el mundo.</p>
+            </div>
+            <div>
+                <h2 class="footer-title">Secciones</h2>
+                <ul class="footer-links">
+                    <li><a href="#servicios">Qué hacemos</a></li>
+                    <li><a href="#asistencia">Equipo de asistencia</a></li>
+                    <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#rubros">Rubros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="footer-title">Contacto</h2>
+                <ul class="footer-links">
+                    <li><a href="tel:@IndexModel.TelefonoHref">@IndexModel.TelefonoDisplay</a></li>
+                    <li><a href="mailto:@IndexModel.Email">@IndexModel.Email</a></li>
+                    <li>[DIRECCIÓN]</li>
+                </ul>
+                <h2 class="footer-title">Redes</h2>
+                <ul class="footer-links footer-social">
+                    <li><a href="[LINK_LINKEDIN]" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="[LINK_INSTAGRAM]" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="@IndexModel.GetWhatsAppUrl()" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; @DateTime.UtcNow.Year Artajerjes Solutions. Todos los derechos reservados.</p>
+            <!-- i18n: estructura lista para versión en inglés (lang/en) -->
+        </div>
+    </footer>
+
+    <a class="whatsapp-float"
+       href="@IndexModel.GetWhatsAppUrl()"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Escribinos por WhatsApp para pedir tu diagnóstico digital gratis">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M16.01 3C9.39 3 4 8.39 4 15.02c0 2.12.56 4.18 1.62 6L4 29l8.16-1.58A12 12 0 0 0 16 27c6.63 0 12-5.39 12-12S22.64 3 16.01 3zm6.9 17.2c-.29.82-1.7 1.5-2.37 1.6-.61.09-1.38.13-2.23-.14-.52-.16-1.18-.38-2.03-.74-3.57-1.54-5.89-5.13-6.07-5.37-.18-.24-1.45-1.93-1.45-3.68s.92-2.61 1.24-2.97c.32-.36.7-.45.93-.45h.67c.22 0 .5-.08.78.6.29.71.98 2.45 1.07 2.63.09.18.14.39.03.62-.11.24-.17.39-.34.6-.17.21-.36.47-.51.63-.17.18-.35.37-.15.72.2.36.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.77 1.71.36.18.56.15.77-.09.21-.24.89-1.04 1.13-1.4.24-.36.47-.3.79-.18.32.12 2.03.96 2.38 1.13.35.18.58.26.67.41.09.15.09.86-.2 1.68z"/>
+        </svg>
+    </a>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
