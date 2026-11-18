@@ -4,7 +4,8 @@ Landing de una página en ASP.NET Core (C# / Razor Pages) para Artajerjes Soluti
 
 ## Sitio publicado
 
-https://robertom-artajerjes.github.io/Landing_Artajerjes/
+- https://www.artajerjes.com/
+- https://robertom-artajerjes.github.io/Landing_Artajerjes/
 
 La carpeta `docs/` es el export estático para GitHub Pages. El desarrollo local sigue siendo la app ASP.NET.
 
