@@ -17,7 +17,6 @@ Abrí la URL que muestre la consola (por defecto `https://localhost:7xxx`).
 
 ## Marcadores pendientes
 
-- `[DIRECCIÓN]`
-- `[LINK_LINKEDIN]`, `[LINK_INSTAGRAM]`
-- Aliados: `[ALIADO 1|2|3]`, `[LOGO]`, `[NOMBRE]`, `[DESCRIPCIÓN]`
 - Equipo: `[FOTO]`, `[NOMBRE]`
+- Contacto (sección): `[DIRECCIÓN]` si corresponde
+- Aliados: sección comentada en `Pages/Index.cshtml` hasta tener `[LOGO]`, `[NOMBRE]`, `[DESCRIPCIÓN]`

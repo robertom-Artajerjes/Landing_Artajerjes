@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"]</title>
-    <meta name="description" content="@(ViewData["MetaDescription"] ?? "Equipo tecnológico para pymes en Argentina y el mundo. Software, web, automatización, marketing y trackeo.")" />
+    <meta name="description" content="@(ViewData["MetaDescription"] ?? "Equipo tecnológico para pymes en Argentina y el mundo: web, sistemas, trackeo de repartos y marketing.")" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="@(ViewData["Canonical"] ?? "https://artajerjes.com/")" />
 
@@ -69,7 +69,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <img src="~/images/logo-artajerjes.png" width="160" height="160" alt="Artajerjes Solutions" />
-                <p>Equipo tecnológico para pymes y empresas en Argentina y el mundo.</p>
+                <p>Web, sistemas y trackeo para pymes. Remoto en el mundo; presencial en Argentina cuando hace falta.</p>
             </div>
             <div>
                 <h2 class="footer-title">Secciones</h2>
@@ -87,12 +87,6 @@
                 <ul class="footer-links">
                     <li><a href="tel:@IndexModel.TelefonoHref">@IndexModel.TelefonoDisplay</a></li>
                     <li><a href="mailto:@IndexModel.Email">@IndexModel.Email</a></li>
-                    <li>[DIRECCIÓN]</li>
-                </ul>
-                <h2 class="footer-title">Redes</h2>
-                <ul class="footer-links footer-social">
-                    <li><a href="[LINK_LINKEDIN]" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    <li><a href="[LINK_INSTAGRAM]" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                     <li><a href="@IndexModel.GetWhatsAppUrl()" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                 </ul>
             </div>
