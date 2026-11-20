@@ -8,9 +8,9 @@ namespace LandingArtajerjes.Pages;
 public class IndexModel : PageModel
 {
     // Formato internacional sin + ni espacios (Argentina móvil)
-    public const string WhatsAppNumber = "5491163615125";
-    public const string TelefonoDisplay = "+54 9 11 6361-5125";
-    public const string TelefonoHref = "+5491163615125";
+    public const string WhatsAppNumber = "5491136615125";
+    public const string TelefonoDisplay = "+54 9 11 3661-5125";
+    public const string TelefonoHref = "+5491136615125";
     public const string Email = "Contacto@Artajerjes.com";
 
     [BindProperty]
